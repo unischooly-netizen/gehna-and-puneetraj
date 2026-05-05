@@ -2,7 +2,8 @@
 <html>
 <head><title>RSVP Form</title></head>
 <body>
-  <form name="rsvp" netlify>
+  <form name="rsvp" data-netlify="true" hidden>
+    <input type="hidden" name="form-name" value="rsvp" />
     <input type="text" name="name" />
     <input type="tel" name="phone" />
     <input type="radio" name="attending" />
