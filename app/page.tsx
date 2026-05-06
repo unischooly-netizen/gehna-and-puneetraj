@@ -723,7 +723,7 @@ export default function WeddingPage() {
             <div className="event-video-wrap">
               <video autoPlay muted loop playsInline>
                 <source
-                  src="./reception.mp4"
+                  src="./reception-night.mp4"
                   type="video/mp4"
                 />
               </video>
