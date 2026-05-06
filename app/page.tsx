@@ -406,9 +406,7 @@ export default function WeddingPage() {
             <p className="blessings-text">
               With the grace of God &amp; Blessings of
               <br />
-              Grandparents Shree K.M. Choudhary &amp; Smt. Sunanda Choudhary,
-              <br />
-              Late Shree R.K. Bhatnagar &amp; Smt. Lily Bhatnagar
+              our grandparents, 
               <br /><br />
               We joyfully request your gracious presence on the wedding celebration of
             </p>
