@@ -412,9 +412,9 @@ export default function WeddingPage() {
             </p>
 
             <div className="couple-block">
-              <span className="couple-name shimmer-gold">Srishti</span>
-              <p className="family-line">Daughter of Shree Pranav Bhatnagar &amp; Smt. Sheetal Bhatnagar</p>
-              <p className="family-subline">(Granddaughter of Smt. Lily Bhatnagar &amp; Late Shree R.K. Bhatnagar )</p>
+              <span className="couple-name shimmer-gold">Pravesh</span>
+              <p className="family-line">Son of Shri Yashwant Choudhary &amp; Smt. Tanuja Choudhary</p>
+              <p className="family-subline">(Grandson of Shree K.M. Choudhary &amp; Smt. Sunanda Choudhary)</p>
             </div>
 
             <div className="ampersand-wrap">
@@ -424,9 +424,9 @@ export default function WeddingPage() {
             </div>
 
             <div className="couple-block">
-              <span className="couple-name shimmer-gold">Pravesh</span>
-              <p className="family-line">Son of Shri Yashwant Choudhary &amp; Smt. Tanuja Choudhary</p>
-              <p className="family-subline">(Grandson of Shree K.M. Choudhary &amp; Smt. Sunanda Choudhary)</p>
+              <span className="couple-name shimmer-gold">Srishti</span>
+              <p className="family-line">Daughter of Shree Pranav Bhatnagar &amp; Smt. Sheetal Bhatnagar</p>
+              <p className="family-subline">(Granddaughter of Smt. Lily Bhatnagar &amp; Late Shree R.K. Bhatnagar )</p>
             </div>
           </div>
 
@@ -924,7 +924,7 @@ export default function WeddingPage() {
                 lineHeight: '1.1',
               }}
             >
-              Srishti &amp; Pravesh
+              Pravesh &amp; Srishti
             </span>
             <div
               style={{
