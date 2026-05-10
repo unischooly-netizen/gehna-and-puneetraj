@@ -946,15 +946,19 @@ export default function WeddingPage() {
             <div className="reveal">
               <span className="footer-heading">Compliments &amp; Love From</span>
               <ul className="footer-list">
-                <li>Naisha, Deepee &amp; Mayank</li>
-                <li>Subarna &amp; Piyush</li>
+                <li>Prajakta</li>
+                <li>Harshal &amp; Priyanka</li>
+                <li>Amit &amp; Anushree</li>
+                <li>Gaurav &amp; Akanksha</li>
+                <li>Sourabh</li>
               </ul>
             </div>
 
             <div className="reveal reveal-delay-2">
               <span className="footer-heading">RSVP</span>
               <div className="footer-rsvp-names">
-                <p>Bhatnagar &amp; Verma family</p>
+                <p>Shree Pramod Choudhary &amp; Smt. Jayshree Choudhary</p>
+                <p>Shree Sunil Choudhary &amp; Sushma Choudhary</p>
               </div>
             </div>
             </div>
