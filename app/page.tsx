@@ -253,36 +253,39 @@ export default function WeddingPage() {
     }
   };
 
-  // --- RSVP submit (Netlify Forms) ---
+  // --- RSVP submit (direct Google Forms POST, no-cors) ---
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    const encode = (data: Record<string, string | string[]>) =>
-      Object.entries(data)
-        .flatMap(([key, value]) =>
-          Array.isArray(value)
-            ? value.map(v => `${encodeURIComponent(key)}=${encodeURIComponent(v)}`)
-            : [`${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`]
-        )
-        .join('&');
+    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
 
-    const data: Record<string, string | string[]> = { 'form-name': 'rsvp' };
-    formData.forEach((val, key) => {
-      if (key === 'attending_events') return;
-      data[key] = val.toString();
-    });
-    data.attending_events = formData.getAll('attending_events').map(String);
+    const GOOGLE_FORM_URL =
+      'https://docs.google.com/forms/d/e/1FAIpQLSf9x7l2z6Snx6GCY5FftyIuf_6o2-LfpqW0X_Ji0sXVW7SdOQ/formResponse';
+
+    const params = new URLSearchParams();
+    params.append('entry.857192818',  (fd.get('name') as string) ?? '');
+    params.append('entry.811463742',  (fd.get('phone') as string) ?? '');
+    params.append('entry.490595501',  (fd.get('attending') as string) ?? '');
+    params.append('entry.1092411044', (fd.get('guest_count') as string) ?? '');
+    fd.getAll('attending_events').forEach(v => params.append('entry.1862080015', v as string));
+    params.append('entry.1347686639', (fd.get('guess_emotional_first') as string) ?? '');
+    params.append('entry.1948185072', (fd.get('wedding_mood') as string) ?? '');
+    params.append('entry.1876987010', (fd.get('advice_for_forever') as string) ?? '');
+    params.append('entry.858860455',  (fd.get('message') as string) ?? '');
 
     try {
-      await fetch('/netlify-form.html', {
+      // mode:'no-cors' is required — Google Forms doesn't set CORS headers.
+      // The response will be opaque (unreadable) but Google still records the submission.
+      await fetch(GOOGLE_FORM_URL, {
         method: 'POST',
+        body: params.toString(),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode(data),
+        mode: 'no-cors',
       });
       setModal({ open: true, type: 'success' });
-      e.currentTarget.reset();
+      form.reset();
     } catch {
       setModal({ open: true, type: 'error' });
     } finally {
@@ -746,8 +749,7 @@ export default function WeddingPage() {
             </p>
           </div>
 
-          <form id="rsvp-form" className="rsvp-form" name="rsvp" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-            <input type="hidden" name="form-name" value="rsvp" />
+          <form id="rsvp-form" className="rsvp-form" onSubmit={handleSubmit}>
 
             {/* Guest Details */}
             <div className="form-card reveal">
@@ -770,7 +772,7 @@ export default function WeddingPage() {
                   <input
                     type="radio"
                     name="attending"
-                    value="yes"
+                    value="Yes"
                     defaultChecked
                     onChange={() => setDeclining(false)}
                   />
@@ -780,7 +782,7 @@ export default function WeddingPage() {
                   <input
                     type="radio"
                     name="attending"
-                    value="no"
+                    value="No"
                     onChange={() => setDeclining(true)}
                   />
                   Regretfully Decline
@@ -814,21 +816,21 @@ export default function WeddingPage() {
                     <span>Day 1: Mehendi Ceremony</span>
                     <small className="checkbox-date">Monday, 29th June 2026</small>
                   </div>
-                  <input type="checkbox" name="attending_events" value="29th June" />
+                  <input type="checkbox" name="attending_events" value="Day 1: Haldi, Ring Ceremony, Sangeet" />
                 </label>
                 <label className="checkbox-pill">
                   <div>
                     <span>Day 2: Haldi, Ring Ceremony &amp; Sangeet</span>
                     <small className="checkbox-date">Tuesday, 30th June 2026</small>
                   </div>
-                  <input type="checkbox" name="attending_events" value="30th June" />
+                  <input type="checkbox" name="attending_events" value="Day 2: Marriage and Reception" />
                 </label>
                 <label className="checkbox-pill">
                   <div>
                     <span>Day 3: Wedding &amp; Reception</span>
                     <small className="checkbox-date">Wednesday, 1st July 2026</small>
                   </div>
-                  <input type="checkbox" name="attending_events" value="1st July" />
+                  <input type="checkbox" name="attending_events" value="Both" />
                 </label>
               </div>
             </div>
@@ -867,7 +869,7 @@ export default function WeddingPage() {
                 <label className="mood-opt"><input type="radio" name="wedding_mood" value="The Food" /> The Food 🍛</label>
                 <label className="mood-opt"><input type="radio" name="wedding_mood" value="The Dance Floor" /> Dance Floor 💃</label>
                 <label className="mood-opt"><input type="radio" name="wedding_mood" value="The Love" /> The Love ❤️</label>
-                <label className="mood-opt"><input type="radio" name="wedding_mood" value="All of It" /> All of It ✨</label>
+                <label className="mood-opt"><input type="radio" name="wedding_mood" value="All of it" /> All of It ✨</label>
               </div>
             </div>
 
