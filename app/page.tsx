@@ -415,7 +415,7 @@ export default function WeddingPage() {
             </p>
 
             <div className="couple-block">
-              <span className="couple-name shimmer-gold">Pravesh</span>
+              <span className="couple-name shimmer-gold">Puneetraj</span>
               <p className="family-line">Son of Shri Yashwant Choudhary &amp; Smt. Tanuja Choudhary</p>
               <p className="family-subline">(Grandson of Shree K.M. Choudhary &amp; Smt. Sunanda Choudhary)</p>
             </div>
@@ -427,7 +427,7 @@ export default function WeddingPage() {
             </div>
 
             <div className="couple-block">
-              <span className="couple-name shimmer-gold">Srishti</span>
+              <span className="couple-name shimmer-gold">Gehna</span>
               <p className="family-line">Daughter of Shree Pranav Bhatnagar &amp; Smt. Sheetal Bhatnagar</p>
               <p className="family-subline">(Granddaughter of Smt. Lily Bhatnagar &amp; Late Shree R.K. Bhatnagar )</p>
             </div>
@@ -841,14 +841,14 @@ export default function WeddingPage() {
               <p className="form-card-subtitle">Who will get emotional first?</p>
               <div className="circle-select">
                 <label className="circle-opt">
-                  <input type="radio" name="guess_emotional_first" value="Srishti" />
+                  <input type="radio" name="guess_emotional_first" value="Gehna" />
                   <div className="circle-face">S</div>
-                  <span className="circle-opt-label">Srishti</span>
+                  <span className="circle-opt-label">Gehna</span>
                 </label>
                 <label className="circle-opt">
-                  <input type="radio" name="guess_emotional_first" value="Pravesh" />
+                  <input type="radio" name="guess_emotional_first" value="Puneetraj" />
                   <div className="circle-face">P</div>
-                  <span className="circle-opt-label">Pravesh</span>
+                  <span className="circle-opt-label">Puneetraj</span>
                 </label>
                 <label className="circle-opt">
                   <input type="radio" name="guess_emotional_first" value="Both" />
@@ -926,7 +926,7 @@ export default function WeddingPage() {
                 lineHeight: '1.1',
               }}
             >
-              Pravesh &amp; Srishti
+              Puneetraj &amp; Gehna
             </span>
             <div
               style={{
@@ -968,12 +968,12 @@ export default function WeddingPage() {
           <br /><br />
           <div className='text-align-center'>
             <a
-            href="https://www.instagram.com/whopravesh/"
+            href="https://www.instagram.com/whoPuneetraj/"
             target="_blank"
             rel="noopener noreferrer"
             className="insta-handle"
           >
-            Created with ♥ by Pravesh.
+            Created with ♥ by Puneetraj.
           </a>
           </div>
         </section>
