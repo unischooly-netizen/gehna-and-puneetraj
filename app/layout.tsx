@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Srishti & Pravesh — A Sacred Union',
+  title: 'Gehna & Puneetraj — A Sacred Union',
   description: 'Wedding invitation for Srishti & Pravesh',
   icons: {
     icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>",
